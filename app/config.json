@@ -1,6 +1,9 @@
 {
   "resources": {
     "models": {
+      "house" : {
+        "path" : "House/Manor.obj"
+      }
     }
   },
   "window": {
