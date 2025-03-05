@@ -8,6 +8,6 @@ class MyApp : public engine::core::App {
     void app_setup() override;
 };
 
-} // app
+}
 
-#endif //MYAPP_HPP
+#endif
