@@ -1,10 +1,9 @@
-
-#include <engine/util/Utils.hpp>
-#include <engine/util/Errors.hpp>
-#include <spdlog/spdlog.h>
-#include <fstream>
-#include <engine/util/Configuration.hpp>
 #include <engine/util/ArgParser.hpp>
+#include <engine/util/Configuration.hpp>
+#include <engine/util/Errors.hpp>
+#include <engine/util/Utils.hpp>
+#include <fstream>
+#include <spdlog/spdlog.h>
 
 namespace engine::util {
 static bool g_tracing = true;
@@ -36,9 +35,9 @@ void Configuration::initialize() {
     } catch (const std::exception &e) {
         std::string message(e.what());
         throw EngineError(EngineError::Type::ConfigurationError, std::format(
-                "Error \"{}\" occurred while parsing the configuration file. "
-                "Please make sure that the file is in the correct json format.",
-                message));
+                                                                         "Error \"{}\" occurred while parsing the configuration file. "
+                                                                         "Please make sure that the file is in the correct json format.",
+                                                                         message));
     }
     spdlog::info("Configuration initialized.");
 }
@@ -105,4 +104,4 @@ std::string read_text_file(const std::filesystem::path &path) {
     ss << file.rdbuf();
     return ss.str();
 }
-} // namespace engine
+}
